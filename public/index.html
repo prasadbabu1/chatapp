@@ -10,8 +10,9 @@
 
 <body>
   <div id="join-chat-div">
-  <label>Enter your name:</label>
+  <label><b>Enter your name:</b></label><br>
   <input type="text" id="username-input">
+  <br>
   <button id="join-btn">Join Chat</button>
 </div>
     <div class="chat-app">
@@ -25,7 +26,7 @@
               name="user-input"
               id="user-input"
               class="user-form--input"
-              placeholder="Type your message"
+              placeholder="Type your message here..."
             />
             <button class="user-form--button" >Send</button>
           </form>
@@ -81,6 +82,8 @@
             socket.emit("message event",data);
             renderMessage(data, "SENT")
             console.log(data)
+            msgInput.value=""
+            conversationContainer.scrollTo(0,conversationContainer.scrollHeight)
           });
 
           socket.on("message event",(data)=>{
@@ -91,8 +94,9 @@
             console.log(data);
           })
           function renderMessage(data, typeofMSG){
+            console.log(data)
             const div = document.createElement("div");
-            div.innerHTML = `<span>${data.message}</span>`
+            div.innerHTML = `<span style = "margin-right:5px">${data.message}</span><h3 style="color:black;font-size:12px; margin-top:7px">${data.username}</h3>`
             console.log("render",data.message, conversationContainer);
 
             if(typeofMSG === "SENT"){

@@ -14,7 +14,7 @@
     display: none;
   }
   .chat-app__header {
-    background:black;
+    background:rgb(118, 109, 223);
     border-radius: var(--container-border-radius) var(--container-border-radius) 0
       0;
     box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.06);
@@ -33,9 +33,13 @@
     height: calc(100% - var(--header-height));
   }
   .user-form {
-    box-shadow: 0px -3px 3px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px -3px 3px -1px rgb(118, 109, 223);
     display: flex;
     z-index: 1;
+    border: 2px solid rgb(118, 109, 223);
+    border-radius: 25px;
+    padding:0px 0px 0px 20px ;
+    margin: 0px 6px 6px 6px;
   }
   .user-form--label {
     display: none;
@@ -48,14 +52,15 @@
     padding: 4px 8px;
   }
   .user-form--button {
-    background:black;
+    background: rgb(118, 109, 223);
     color: #fff;
     cursor: pointer;
     border: none;
-    border-radius: 0 0 var(--container-border-radius) 0;
+    border-radius: 20px;
     letter-spacing: 0.95px;
-    padding: 3px 8px;
+    padding: 3px 15px;
     font-weight: 700;
+    margin: 4px;
   }
   .conversation {
     margin-top: auto;
@@ -76,9 +81,11 @@
   }
   .message span {
     background: whitesmoke;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     display: inline-block;
     padding: 6px 12px;
+    border-radius: 15px 15px 15px 0px;
+
   }
   /* .message.user span {
     background:black;
@@ -86,9 +93,10 @@
     margin-left: auto;
   } */
   .user span{
-    background: black;
+    background: rgb(118, 109, 223);
     color: #fff;
     margin-left: auto;
+    border-radius: 15px 15px 0px 15px;
   }
   
   @media screen and (min-width: 360px) {
@@ -103,4 +111,29 @@
       max-height: calc(600px - (var(--header-height) + var(--input-height)));
     }
   }
-  
+#join-chat-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#username-input{
+  padding: 5px;
+  width: 300px;
+  box-shadow: 0px -3px 3px -1px rgb(118, 109, 223);
+  display: flex;
+  border: 2px solid rgb(118, 109, 223);
+  border-radius: 25px;
+}
+#join-btn{
+  background: rgb(118, 109, 223);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  letter-spacing: 0.95px;
+  padding: 7px 15px;
+  font-weight: 700;
+  margin: 4px;
+}
